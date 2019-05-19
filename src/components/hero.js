@@ -1,12 +1,30 @@
 import React from "react"
+import styled from "styled-components"
+
+const Container = styled.section`
+  background: url("../images/fuji.jpg") no-repeat fixed 50% 0%;
+  background-size: cover;
+  height: 100vh;
+`
+
+const Title = styled.h1`
+  color: white;
+  text-align: center;
+  margin-top: 30vh;
+`
+
+const Subtitle = styled.p`
+  color: white;
+  text-align: center;
+`
 
 export default () => (
-  <section id="hello">
+  <Container>
     <div class="row">
       <div class="small-12 small-centered columns">
-        <h1 class="text-center">Hello, there.</h1>
-        <p class="text-center">Thank you for your curiosity of me.</p>
+        <Title>Hello, there.</Title>
+        <Subtitle>Thank you for your curiosity of me.</Subtitle>
       </div>
     </div>
-  </section>
+  </Container>
 )
