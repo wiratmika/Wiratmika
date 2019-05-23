@@ -1,11 +1,7 @@
 import React from "react"
+import { graphql, StaticQuery } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 import styled from "styled-components"
-
-const Container = styled.section`
-  background: url("../images/fuji.jpg") no-repeat fixed 50% 0%;
-  background-size: cover;
-  height: 100vh;
-`
 
 const Title = styled.h1`
   color: white;
@@ -18,13 +14,36 @@ const Subtitle = styled.p`
   text-align: center;
 `
 
-export default () => (
-  <Container>
-    <div class="row">
-      <div class="small-12 small-centered columns">
-        <Title>Hello, there.</Title>
-        <Subtitle>Thank you for your curiosity of me.</Subtitle>
-      </div>
-    </div>
-  </Container>
+const Hero = ({ className }) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        file(relativePath: { eq: "fuji.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 4160) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `}
+    render={data => {
+      return (
+        <BackgroundImage
+          Tag="section"
+          className={className}
+          fluid={data.file.childImageSharp.fluid}
+        >
+          <Title>Hello, there.</Title>
+          <Subtitle>Thank you for your curiosity of me.</Subtitle>
+        </BackgroundImage>
+      )
+    }}
+  />
 )
+
+export default styled(Hero)`
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center 0%;
+`
