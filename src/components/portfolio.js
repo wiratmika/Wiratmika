@@ -3,8 +3,8 @@ import React from "react"
 const works = [
   {
     id: "adkesma-issue-tracker",
-    name: "Adkesma Issue Tracker BEM Fasilkom UI",
-    shortname: "Adkesma Issue Tracker",
+    title: "Adkesma Issue Tracker BEM Fasilkom UI",
+    shortTitle: "Adkesma Issue Tracker",
     role: "Full-stack developer",
     date: "Oct - Nov 2016",
     link: "https://bem.cs.ui.ac.id/issue",
@@ -13,8 +13,8 @@ const works = [
   },
   {
     id: "uiux-challenge",
-    name: "UI/UX Challenge Ristek Fasilkom UI",
-    shortname: "UI/UX Challenge",
+    title: "UI/UX Challenge Ristek Fasilkom UI",
+    shortTitle: "UI/UX Challenge",
     role: "Backend developer",
     date: "Jun 2016",
     description:
@@ -22,8 +22,8 @@ const works = [
   },
   {
     id: "lpj-online",
-    name: "LPJ Online BEM Fasilkom UI",
-    shortname: "LPJ Online",
+    title: "LPJ Online BEM Fasilkom UI",
+    shortTitle: "LPJ Online",
     role: "Full-stack developer",
     date: "May - Jun 2016",
     link: "https://bem.cs.ui.ac.id/lpj16",
@@ -32,8 +32,8 @@ const works = [
   },
   {
     id: "vakansi-visual",
-    name: "Vakansi Visual Company Profile Website",
-    shortname: "Vakansi Visual",
+    title: "Vakansi Visual Company Profile Website",
+    shortTitle: "Vakansi Visual",
     role: "Designer & developer",
     date: "Aug 2014 - Jan 2015",
     link: "https://wiratmika.me/Vakansi-Visual/",
@@ -42,8 +42,8 @@ const works = [
   },
   {
     id: "oh-fasilkom",
-    name: "Open House Fasilkom 2014 Event Website",
-    shortname: "OH Fasilkom",
+    title: "Open House Fasilkom 2014 Event Website",
+    shortTitle: "OH Fasilkom",
     role: "Developer",
     date: "Oct - Nov 2014",
     link: "https://wiratmika.me/OH-Fasilkom/",
@@ -52,8 +52,8 @@ const works = [
   },
   {
     id: "startup-academy",
-    name: "Startup Academy CompFest7",
-    shortname: "Startup Academy",
+    title: "Startup Academy CompFest7",
+    shortTitle: "Startup Academy",
     role: "Person in Charge",
     date: "Nov 2014 - Oct 2015",
     link:
@@ -62,6 +62,22 @@ const works = [
       "Initiated and organized the first startup education event entirely organized by university students. Startup Academy is an event to ignite Indonesia's young talents in technopreneurship by giving education on startup development.<br>Invited 12 Indonesian startup activists to be mentors and speakers, including Andrias Ekoyuono (Ideosource), Dondi Hananto (Kinara Indonesia), and Sanny Gaddafi (8villages).",
   },
 ]
+
+const Work = ({ id, title, shortTitle, image, isEnd = false }) => (
+  <li class={`works small-12 medium-6 large-4 columns ${isEnd ? "end" : ""}`}>
+    <figure>
+      <div>
+        <img src={image} alt={title} />
+        <figcaption>
+          <h3>{shortTitle}</h3>
+          <a href={isEnd ? "#contact" : "#"} class="button" data-reveal-id={id}>
+            {isEnd ? "Collaborate" : "View"}
+          </a>
+        </figcaption>
+      </div>
+    </figure>
+  </li>
+)
 
 export default () => (
   <section id="portfolio">
@@ -79,33 +95,20 @@ export default () => (
 
     <ul class="row grid cs-style">
       {works.map(work => (
-        <li class="works small-12 medium-6 large-4 columns">
-          <figure>
-            <div>
-              <img src={`/images/${work.id}.jpg`} alt={work.name} />
-              <figcaption>
-                <h3>{work.shortname}</h3>
-                <a href="#" class="button" data-reveal-id={work.id}>
-                  View
-                </a>
-              </figcaption>
-            </div>
-          </figure>
-        </li>
+        <Work
+          id={work.id}
+          title={work.name}
+          shortTitle={work.shortTitle}
+          image={`/images/${work.id}.jpg`}
+        />
       ))}
-      <li class="works small-12 medium-6 large-4 columns end">
-        <figure>
-          <div>
-            <img src="images/you.jpg" alt="Your Call" />
-            <figcaption>
-              <h3>Your Call!</h3>
-              <a href="#contact" class="button">
-                Collaborate
-              </a>
-            </figcaption>
-          </div>
-        </figure>
-      </li>
+      <Work
+        id="your-call"
+        title="Your Call!"
+        shortTitle="Your Call"
+        image="images/you.jpg"
+        isEnd
+      />
     </ul>
   </section>
 )
