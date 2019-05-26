@@ -1,0 +1,38 @@
+[
+  {
+    "id": "email",
+    "link": "https://aemail.com/qzD",
+    "icon": "envelope-square",
+    "isBrand": false
+  },
+  {
+    "id": "linkedin",
+    "link": "https://id.linkedin.com/in/wiratmika",
+    "icon": "linkedin",
+    "isBrand": true
+  },
+  {
+    "id": "github",
+    "link": "https://github.com/wiratmika",
+    "icon": "github",
+    "isBrand": true
+  },
+  {
+    "id": "instagram",
+    "link": "https://instagram.com/vvnn.q",
+    "icon": "instagram",
+    "isBrand": true
+  },
+  {
+    "id": "twitter",
+    "link": "https://twitter.com/wiratmika",
+    "icon": "twitter",
+    "isBrand": true
+  },
+  {
+    "id": "blog",
+    "link": "https://blog.wiratmika.me",
+    "icon": "rss-square",
+    "isBrand": false
+  }
+]
