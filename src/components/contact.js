@@ -22,13 +22,13 @@ const Social = ({ link, icon, isBrand }) => (
 
 const Contact = ({ className }) => (
   <StaticQuery
-    query={backgroundQuery}
-    render={data => {
+    query={query}
+    render={({ file, allSocialJson }) => {
       return (
         <BackgroundImage
           Tag="footer"
           className={className}
-          fluid={data.file.childImageSharp.fluid}
+          fluid={file.childImageSharp.fluid}
         >
           <div class="row">
             <div class="medium-9 medium-push-3 columns">
@@ -42,19 +42,14 @@ const Contact = ({ className }) => (
 
             <div class="medium-3 medium-pull-9 columns">
               <div class="row">
-                <StaticQuery
-                  query={socialQuery}
-                  render={socialData =>
-                    socialData.allSocialJson.edges.map(({ node }) => (
-                      <Social
-                        key={node.id}
-                        link={node.link}
-                        icon={node.icon}
-                        isBrand={node.isBrand}
-                      />
-                    ))
-                  }
-                />
+                {allSocialJson.edges.map(({ node }) => (
+                  <Social
+                    key={node.id}
+                    link={node.link}
+                    icon={node.icon}
+                    isBrand={node.isBrand}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -64,7 +59,7 @@ const Contact = ({ className }) => (
   />
 )
 
-const backgroundQuery = graphql`
+const query = graphql`
   query {
     file(relativePath: { eq: "tree.jpg" }) {
       childImageSharp {
@@ -73,11 +68,6 @@ const backgroundQuery = graphql`
         }
       }
     }
-  }
-`
-
-const socialQuery = graphql`
-  query {
     allSocialJson {
       edges {
         node {

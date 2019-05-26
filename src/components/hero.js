@@ -36,7 +36,7 @@ const query = graphql`
   query {
     file(relativePath: { eq: "fuji.jpg" }) {
       childImageSharp {
-        fluid(quality: 70) {
+        fluid(quality: 80) {
           ...GatsbyImageSharpFluid
         }
       }
