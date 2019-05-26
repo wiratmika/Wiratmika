@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Social = ({ link, icon, isBrand }) => (
   <div class="small-4 columns">
-    <a href={link} target="_blank">
+    <a href={link} target="_blank" rel="noopener noreferrer">
       <FontAwesomeIcon
         icon={isBrand ? ["fab", icon] : icon}
         size="4x"
