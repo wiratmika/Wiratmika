@@ -3,21 +3,18 @@ import { StaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styled from "styled-components"
+import { Box } from "@rebass/grid"
 
-const Title = styled.h3`
-  margin-top: 1rem;
-`
+import { SectionContainer } from "../components/common"
 
 const Social = ({ link, icon, isBrand }) => (
-  <div class="small-4 columns">
-    <a href={link} target="_blank" rel="noopener noreferrer">
-      <FontAwesomeIcon
-        icon={isBrand ? ["fab", icon] : icon}
-        size="4x"
-        className="social"
-      />
-    </a>
-  </div>
+  <a href={link} target="_blank" rel="noopener noreferrer">
+    <FontAwesomeIcon
+      icon={isBrand ? ["fab", icon] : icon}
+      size="2x"
+      className="social"
+    />
+  </a>
 )
 
 const Contact = ({ className }) => (
@@ -30,29 +27,25 @@ const Contact = ({ className }) => (
           className={className}
           fluid={file.childImageSharp.fluid}
         >
-          <div class="row">
-            <div class="medium-9 medium-push-3 columns">
-              <Title>Drop me a message!</Title>
-              <p class="lead">
+          <SectionContainer>
+            <Box px={4}>
+              <h3>Drop me a message!</h3>
+              <p>
                 I am moonlighting in interesting projects, specializing in
                 responsive, custom-made event and company profile websites.
                 Contact me and let's have a nice evening chat together.
               </p>
-            </div>
 
-            <div class="medium-3 medium-pull-9 columns">
-              <div class="row">
-                {allSocialJson.edges.map(({ node }) => (
-                  <Social
-                    key={node.id}
-                    link={node.link}
-                    icon={node.icon}
-                    isBrand={node.isBrand}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+              {allSocialJson.edges.map(({ node }) => (
+                <Social
+                  key={node.id}
+                  link={node.link}
+                  icon={node.icon}
+                  isBrand={node.isBrand}
+                />
+              ))}
+            </Box>
+          </SectionContainer>
         </BackgroundImage>
       )
     }}
@@ -63,8 +56,8 @@ const query = graphql`
   query {
     file(relativePath: { eq: "tree.jpg" }) {
       childImageSharp {
-        fluid(quality: 90, maxWidth: 4160) {
-          ...GatsbyImageSharpFluid_withWebp
+        fluid(quality: 60) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -82,9 +75,6 @@ const query = graphql`
 `
 
 export default styled(Contact)`
-  padding-top: 8rem;
-  padding-bottom: 5rem;
-
   background-attachment: fixed;
   color: white;
 `
