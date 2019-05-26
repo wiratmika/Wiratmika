@@ -10,15 +10,21 @@ const Title = styled.h2`
   text-align: center;
 `
 
+const Subtitle = styled.p`
+  @media (max-width: 640px) {
+    text-align: center;
+    margin-top: 1.5em;
+  }
+`
+
 export default ({ data }) => (
   <SectionContainer as="section">
     <Flex flexDirection="column" width={1}>
       <Title>About Me</Title>
       <Divider />
     </Flex>
-    <Flex width={1} flexWrap="wrap">
-      {/* className="small-6 small-centered medium-3 medium-uncentered columns" */}
-      <Box width={[1 / 2, 1 / 4]} px={2}>
+    <Flex width={1} flexWrap="wrap" alignItems="center">
+      <Box width={[1 / 2, 1 / 5]} px={2} mx="auto">
         <StaticQuery
           query={query}
           render={data => (
@@ -34,14 +40,13 @@ export default ({ data }) => (
         />
       </Box>
 
-      {/* class="small-12 medium-9 columns" */}
-      <Box width={[1, 3 / 4]} px={2}>
-        <p>
+      <Box width={[1, 4 / 5]} px={2}>
+        <Subtitle>
           I'm a social impact-driven, full-stack technologist obsessed with
           making disproportionate impact at scale. I speak both computer and
           business languages. Would love to help building Indonesian tech
           community and other engineering endeavors!
-        </p>
+        </Subtitle>
       </Box>
     </Flex>
   </SectionContainer>
