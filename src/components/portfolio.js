@@ -34,26 +34,7 @@ export default () => (
 
     <ul class="row grid cs-style">
       <StaticQuery
-        query={graphql`
-          query {
-            allWorksJson {
-              edges {
-                node {
-                  id
-                  title
-                  shortTitle
-                  thumbnail {
-                    childImageSharp {
-                      fixed(width: 125, height: 125) {
-                        ...GatsbyImageSharpFixed
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        `}
+        query={query}
         render={data =>
           data.allWorksJson.edges.map(({ node }, i) => (
             <Work
@@ -70,3 +51,24 @@ export default () => (
     </ul>
   </section>
 )
+
+const query = graphql`
+  query {
+    allWorksJson {
+      edges {
+        node {
+          id
+          title
+          shortTitle
+          thumbnail {
+            childImageSharp {
+              fixed(width: 125, height: 125) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
