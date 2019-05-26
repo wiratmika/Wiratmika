@@ -4,11 +4,7 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import { Flex, Box } from "@rebass/grid"
 
-import { Divider, SectionContainer } from "../components/common"
-
-const Title = styled.h2`
-  text-align: center;
-`
+import { SectionContainer, SectionHeader } from "../components/common"
 
 const Subtitle = styled.p`
   @media (max-width: 640px) {
@@ -19,10 +15,8 @@ const Subtitle = styled.p`
 
 export default ({ data }) => (
   <SectionContainer as="section">
-    <Flex flexDirection="column" width={1}>
-      <Title>About Me</Title>
-      <Divider />
-    </Flex>
+    <SectionHeader>About Me</SectionHeader>
+
     <Flex width={1} flexWrap="wrap" alignItems="center">
       <Box width={[1 / 2, 1 / 5]} px={2} mx="auto">
         <StaticQuery

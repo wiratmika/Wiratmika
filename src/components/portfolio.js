@@ -2,59 +2,77 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
+import { Flex, Box } from "@rebass/grid"
 
-import { SectionContainer } from "../components/common"
+import { SectionContainer, SectionHeader } from "../components/common"
+import "./portfolio.css"
 
 const PortfolioContainer = styled(SectionContainer)`
   background: #f5f5f5;
 `
 
+const Subtitle = styled.p`
+  text-align: center;
+`
+
 const Work = ({ id, title, shortTitle, image, isEnd = false }) => (
-  <li class={`works small-12 medium-6 large-4 columns ${isEnd ? "end" : ""}`}>
+  <Box
+    as="li"
+    className={`works ${isEnd ? "end" : ""}`}
+    width={[1, 1 / 2, 1 / 3]}
+    px={2}
+  >
     <figure>
       <div>
-        <Img fixed={image} alt={title} />
+        <Img fluid={image} alt={title} />
         <figcaption>
           <h3>{shortTitle}</h3>
-          <a href={isEnd ? "#contact" : "#"} class="button" data-reveal-id={id}>
+          <a
+            href={isEnd ? "#contact" : "#"}
+            className="button"
+            data-reveal-id={id}
+          >
             {isEnd ? "Collaborate" : "View"}
           </a>
         </figcaption>
       </div>
     </figure>
-  </li>
+  </Box>
 )
 
 export default () => (
-  <PortfolioContainer>
-    <h2 class="text-center" data-magellan-destination="portfolio">
-      Portfolio
-    </h2>
-    <div class="divider" />
+  <PortfolioContainer
+    outerContent={
+      <Flex
+        as="ul"
+        className="grid cs-style"
+        width={1}
+        mx="auto"
+        flexWrap="wrap"
+      >
+        <StaticQuery
+          query={query}
+          render={data =>
+            data.allWorksJson.edges.map(({ node }, i) => (
+              <Work
+                key={node.id}
+                id={node.id}
+                title={node.title}
+                shortTitle={node.shortTitle}
+                image={node.thumbnail.childImageSharp.fluid}
+                isEnd={data.allWorksJson.totalCount === i + 1}
+              />
+            ))
+          }
+        />
+      </Flex>
+    }
+  >
+    <SectionHeader>Portfolio</SectionHeader>
 
-    <div class="row">
-      <div class="small-9 small-centered columns">
-        <p class="text-center">Here are several projects that I've done.</p>
-      </div>
-    </div>
-
-    <ul class="row grid cs-style">
-      <StaticQuery
-        query={query}
-        render={data =>
-          data.allWorksJson.edges.map(({ node }, i) => (
-            <Work
-              key={node.id}
-              id={node.id}
-              title={node.title}
-              shortTitle={node.shortTitle}
-              image={node.thumbnail.childImageSharp.fixed}
-              isEnd={data.allWorksJson.totalCount === i + 1}
-            />
-          ))
-        }
-      />
-    </ul>
+    <Box mx="auto">
+      <Subtitle>Here are excerpts of projects that I've done.</Subtitle>
+    </Box>
   </PortfolioContainer>
 )
 
@@ -69,8 +87,8 @@ const query = graphql`
           shortTitle
           thumbnail {
             childImageSharp {
-              fixed(width: 125, height: 125) {
-                ...GatsbyImageSharpFixed
+              fluid(quality: 70) {
+                ...GatsbyImageSharpFluid
               }
             }
           }

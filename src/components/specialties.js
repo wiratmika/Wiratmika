@@ -30,7 +30,11 @@ export default () => (
       <div class="small-12 medium-4 columns">
         <div class="row">
           <div class="small-10 small-centered columns text-center">
-            <FontAwesomeIcon icon="mobile" size="5x" className="specialty" />
+            <FontAwesomeIcon
+              icon="mobile-alt"
+              size="5x"
+              className="specialty"
+            />
           </div>
         </div>
         <div class="row">

@@ -5,7 +5,7 @@ import {
   faCode,
   faDesktop,
   faEnvelopeSquare,
-  faMobile,
+  faMobileAlt,
   faRssSquare,
 } from "@fortawesome/free-solid-svg-icons"
 
@@ -19,7 +19,7 @@ import Contact from "../components/contact"
 
 import "./global.css"
 
-library.add(fab, faCode, faDesktop, faEnvelopeSquare, faMobile, faRssSquare)
+library.add(fab, faCode, faDesktop, faEnvelopeSquare, faMobileAlt, faRssSquare)
 
 const IndexPage = () => (
   <React.Fragment>
