@@ -4,6 +4,10 @@ import BackgroundImage from "gatsby-background-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styled from "styled-components"
 
+const Title = styled.h3`
+  margin-top: 1rem;
+`
+
 const Social = ({ link, icon, isBrand }) => (
   <div class="small-4 columns">
     <a href={link} target="_blank" rel="noopener noreferrer">
@@ -28,7 +32,7 @@ const Contact = ({ className }) => (
         >
           <div class="row">
             <div class="medium-9 medium-push-3 columns">
-              <h3>Drop me a message!</h3>
+              <Title>Drop me a message!</Title>
               <p class="lead">
                 I am moonlighting in interesting projects, specializing in
                 responsive, custom-made event and company profile websites.
@@ -88,12 +92,9 @@ const socialQuery = graphql`
 `
 
 export default styled(Contact)`
-  position: relative;
-  padding-top: 5rem;
+  padding-top: 8rem;
   padding-bottom: 5rem;
 
   background-attachment: fixed;
   color: white;
-  padding-top: 8rem;
-  padding-bottom: 0;
 `

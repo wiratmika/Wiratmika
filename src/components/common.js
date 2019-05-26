@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 export const SectionContainer = styled.section`
-  position: relative;
   padding-top: 5rem;
   padding-bottom: 5rem;
 `

@@ -9,28 +9,22 @@ const Title = styled.h2`
   text-align: center;
 `
 
+const PhotoContainer = styled.div`
+  width: 220px; // TODO: use proper container instead
+`
+
 export default ({ data }) => (
   <SectionContainer>
     <Title>About Me</Title>
     <Divider />
 
     <div class="row">
-      <div class="small-6 small-centered medium-3 medium-uncentered columns">
+      <PhotoContainer className="small-6 small-centered medium-3 medium-uncentered columns">
         <StaticQuery
-          query={graphql`
-            query {
-              file(relativePath: { eq: "wiratmika.jpg" }) {
-                childImageSharp {
-                  fixed(width: 125, height: 125) {
-                    ...GatsbyImageSharpFixed
-                  }
-                }
-              }
-            }
-          `}
+          query={query}
           render={data => (
             <Img
-              fixed={data.file.childImageSharp.fixed}
+              fluid={data.file.childImageSharp.fluid}
               alt="Wiratmika"
               style={{
                 borderRadius: "50%",
@@ -39,7 +33,7 @@ export default ({ data }) => (
             />
           )}
         />
-      </div>
+      </PhotoContainer>
 
       <div class="small-12 medium-9 columns">
         <p>
@@ -52,3 +46,15 @@ export default ({ data }) => (
     </div>
   </SectionContainer>
 )
+
+const query = graphql`
+  query {
+    file(relativePath: { eq: "wiratmika.jpg" }) {
+      childImageSharp {
+        fluid(quality: 40) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
