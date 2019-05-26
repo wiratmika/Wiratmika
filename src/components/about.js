@@ -7,7 +7,6 @@ export default ({ data }) => (
     <h2 class="text-center" data-magellan-destination="about">
       About Me
     </h2>
-    <a name="about" />
     <div class="divider" />
 
     <div class="row">

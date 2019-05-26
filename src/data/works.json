@@ -1,0 +1,67 @@
+[
+  {
+    "id": "adkesma-issue-tracker",
+    "title": "Adkesma Issue Tracker BEM Fasilkom UI",
+    "shortTitle": "Adkesma Issue Tracker",
+    "role": "Full-stack developer",
+    "date": "Oct - Nov 2016",
+    "link": "https://bem.cs.ui.ac.id/issue",
+    "description": "Completely redesigned and rebuilt Adkesma Issue Tracker, a platform for students of Faculty of Computer Science Universitas Indonesia to report welfare-related issues.",
+    "thumbnail": "../images/works/adkesma-issue-tracker.jpg"
+  },
+  {
+    "id": "uiux-challenge",
+    "title": "UI/UX Challenge Ristek Fasilkom UI",
+    "shortTitle": "UI/UX Challenge",
+    "role": "Backend developer",
+    "date": "Jun 2016",
+    "description": "Created and integrated backend of registration and administration for an internal UI/UX competition at Faculty of Computer Science Universitas Indonesia.",
+    "thumbnail": "../images/works/uiux-challenge.jpg"
+  },
+  {
+    "id": "lpj-online",
+    "title": "LPJ Online BEM Fasilkom UI",
+    "shortTitle": "LPJ Online",
+    "role": "Full-stack developer",
+    "date": "May - Jun 2016",
+    "link": "https://bem.cs.ui.ac.id/lpj16",
+    "description": "Online accountability reporting system of Faculty of Computer Science Student Executive Board to be used by the Internal Control Bureau. Designed the database schema, wrote back-end system using Laravel and user interfaces using Bootstrap 3.",
+    "thumbnail": "../images/works/lpj-online.jpg"
+  },
+  {
+    "id": "vakansi-visual",
+    "title": "Vakansi Visual Company Profile Website",
+    "shortTitle": "Vakansi Visual",
+    "role": "Designer & developer",
+    "date": "Aug 2014 - Jan 2015",
+    "link": "https://wiratmika.me/Vakansi-Visual/",
+    "description": "A company profile website for creative label based in Jakarta. Custom-designed the website and wrote the front-end code.",
+    "thumbnail": "../images/works/vakansi-visual.jpg"
+  },
+  {
+    "id": "oh-fasilkom",
+    "title": "Open House Fasilkom 2014 Event Website",
+    "shortTitle": "OH Fasilkom",
+    "role": "Developer",
+    "date": "Oct - Nov 2014",
+    "link": "https://wiratmika.me/OH-Fasilkom/",
+    "description": "A promotional website for yearly event held by BEM Fasilkom UI 2014. Wrote the front-end code based on existing mockups.",
+    "thumbnail": "../images/works/oh-fasilkom.jpg"
+  },
+  {
+    "id": "startup-academy",
+    "title": "Startup Academy CompFest7",
+    "shortTitle": "Startup Academy",
+    "role": "Person in Charge",
+    "date": "Nov 2014 - Oct 2015",
+    "link": "https://web.archive.org/web/20151110034935/http://compfest.web.id/event/startup-academy",
+    "description": "Initiated and organized the first startup education event entirely organized by university students. Startup Academy is an event to ignite Indonesia's young talents in technopreneurship by giving education on startup development.<br>Invited 12 Indonesian startup activists to be mentors and speakers, including Andrias Ekoyuono (Ideosource), Dondi Hananto (Kinara Indonesia), and Sanny Gaddafi (8villages).",
+    "thumbnail": "../images/works/startup-academy.jpg"
+  },
+  {
+    "id": "your-call",
+    "title": "Your Call!",
+    "shortTitle": "Your Call",
+    "thumbnail": "../images/works/your-call.jpg"
+  }
+]
