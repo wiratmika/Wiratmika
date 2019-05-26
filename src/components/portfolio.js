@@ -11,14 +11,10 @@ const PortfolioContainer = styled(SectionContainer)`
   background: #f5f5f5;
 `
 
-const Subtitle = styled.p`
-  text-align: center;
-`
-
 const Work = ({ id, title, shortTitle, image, isEnd = false }) => (
   <Box
     as="li"
-    className={`works ${isEnd ? "end" : ""}`}
+    className={`works${isEnd ? " end" : ""}`}
     width={[1, 1 / 2, 1 / 3]}
     px={2}
   >
@@ -71,7 +67,9 @@ export default () => (
     <SectionHeader>Portfolio</SectionHeader>
 
     <Box mx="auto">
-      <Subtitle>Here are excerpts of projects that I've done.</Subtitle>
+      <p className="text-center">
+        Here are excerpts of projects that I've done.
+      </p>
     </Box>
   </PortfolioContainer>
 )

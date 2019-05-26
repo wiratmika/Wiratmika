@@ -20,13 +20,9 @@ const Divider = styled.div`
   padding-bottom: 2.3rem;
 `
 
-const Title = styled.h2`
-  text-align: center;
-`
-
 export const SectionHeader = props => (
   <Flex flexDirection="column" width={1}>
-    <Title>{props.children}</Title>
+    <h2 className="text-center">{props.children}</h2>
     <Divider />
   </Flex>
 )

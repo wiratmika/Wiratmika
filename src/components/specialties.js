@@ -1,68 +1,38 @@
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Flex, Box } from "@rebass/grid"
 
-import { SectionContainer } from "../components/common"
+import { SectionContainer, SectionHeader } from "../components/common"
+
+const Specialty = ({ icon, title, children }) => (
+  <Box width={[1, 1 / 3]} px={2}>
+    <Box className="text-center">
+      <FontAwesomeIcon icon={icon} size="5x" className="specialty" />
+    </Box>
+    <Box>
+      <h3 className="text-center">{title}</h3>
+      <p className="text-center">{children}</p>
+    </Box>
+  </Box>
+)
 
 export default () => (
   <SectionContainer>
-    <h2 class="text-center" data-magellan-destination="specialties">
-      Specialties
-    </h2>
-    <div class="divider" />
+    <SectionHeader>Specialties</SectionHeader>
 
-    <div class="row">
-      <div class="small-12 medium-4 columns">
-        <div class="row">
-          <div class="small-10 small-centered columns text-center">
-            <FontAwesomeIcon icon="code" size="5x" className="specialty" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="small-12 columns">
-            <h3 class="text-center">Software Engineering</h3>
-            <p class="text-center">
-              With proficient implementation in Java, PHP, JavaScript, Python,
-              and a little bit of Ruby.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="small-12 medium-4 columns">
-        <div class="row">
-          <div class="small-10 small-centered columns text-center">
-            <FontAwesomeIcon
-              icon="mobile-alt"
-              size="5x"
-              className="specialty"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="small-12 columns">
-            <h3 class="text-center">Mobile App Development</h3>
-            <p class="text-center">
-              I serve fluid, cross-platform apps built with React Native for
-              breakfast.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="small-12 medium-4 columns">
-        <div class="row">
-          <div class="small-10 small-centered columns text-center">
-            <FontAwesomeIcon icon="desktop" size="5x" className="specialty" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="small-12 columns">
-            <h3 class="text-center">Web Development</h3>
-            <p class="text-center">
-              HTML5, CSS3, Sass, responsive design, Webpack, and everything in
-              between.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Flex flexWrap="wrap">
+      <Specialty icon="code" title="Software Engineering">
+        With proficient implementation in Java, PHP, JavaScript, Python, and a
+        little bit of Ruby.
+      </Specialty>
+      <Specialty icon="mobile-alt" title="Mobile App Development">
+        I serve fluid, cross-platform apps built with React Native for
+        breakfast.
+      </Specialty>
+      <Specialty icon="desktop" title="Web Development">
+        HTML5, CSS3, Sass, responsive design, Webpack, and everything in
+        between.
+      </Specialty>
+    </Flex>
   </SectionContainer>
 )
