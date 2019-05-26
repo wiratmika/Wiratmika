@@ -17,6 +17,8 @@ import Portfolio from "../components/portfolio"
 import Specialties from "../components/specialties"
 import Contact from "../components/contact"
 
+import "./global.css"
+
 library.add(fab, faCode, faDesktop, faEnvelopeSquare, faMobile, faRssSquare)
 
 const IndexPage = () => (

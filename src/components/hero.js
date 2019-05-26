@@ -16,17 +16,7 @@ const Subtitle = styled.p`
 
 const Hero = ({ className }) => (
   <StaticQuery
-    query={graphql`
-      query {
-        file(relativePath: { eq: "fuji.jpg" }) {
-          childImageSharp {
-            fluid(quality: 90, maxWidth: 4160) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `}
+    query={query}
     render={data => {
       return (
         <BackgroundImage
@@ -41,6 +31,18 @@ const Hero = ({ className }) => (
     }}
   />
 )
+
+const query = graphql`
+  query {
+    file(relativePath: { eq: "fuji.jpg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 4160) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
 
 export default styled(Hero)`
   height: 100vh;

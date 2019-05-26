@@ -1,13 +1,18 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import styled from "styled-components"
+
+import { Divider, SectionContainer } from "../components/common"
+
+const Title = styled.h2`
+  text-align: center;
+`
 
 export default ({ data }) => (
-  <section id="about">
-    <h2 class="text-center" data-magellan-destination="about">
-      About Me
-    </h2>
-    <div class="divider" />
+  <SectionContainer>
+    <Title>About Me</Title>
+    <Divider />
 
     <div class="row">
       <div class="small-6 small-centered medium-3 medium-uncentered columns">
@@ -25,9 +30,12 @@ export default ({ data }) => (
           `}
           render={data => (
             <Img
-              class="wiratmika"
               fixed={data.file.childImageSharp.fixed}
               alt="Wiratmika"
+              style={{
+                borderRadius: "50%",
+                boxShadow: "0 0 5px #222",
+              }}
             />
           )}
         />
@@ -42,5 +50,5 @@ export default ({ data }) => (
         </p>
       </div>
     </div>
-  </section>
+  </SectionContainer>
 )

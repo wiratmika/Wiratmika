@@ -1,6 +1,13 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import styled from "styled-components"
+
+import { SectionContainer } from "../components/common"
+
+const PortfolioContainer = styled(SectionContainer)`
+  background: #f5f5f5;
+`
 
 const Work = ({ id, title, shortTitle, image, isEnd = false }) => (
   <li class={`works small-12 medium-6 large-4 columns ${isEnd ? "end" : ""}`}>
@@ -19,11 +26,10 @@ const Work = ({ id, title, shortTitle, image, isEnd = false }) => (
 )
 
 export default () => (
-  <section id="portfolio">
+  <PortfolioContainer>
     <h2 class="text-center" data-magellan-destination="portfolio">
       Portfolio
     </h2>
-    <a name="portfolio" />
     <div class="divider" />
 
     <div class="row">
@@ -43,18 +49,19 @@ export default () => (
               title={node.title}
               shortTitle={node.shortTitle}
               image={node.thumbnail.childImageSharp.fixed}
-              isEnd={data.allWorksJson.edges.length === i + 1}
+              isEnd={data.allWorksJson.totalCount === i + 1}
             />
           ))
         }
       />
     </ul>
-  </section>
+  </PortfolioContainer>
 )
 
 const query = graphql`
   query {
     allWorksJson {
+      totalCount
       edges {
         node {
           id

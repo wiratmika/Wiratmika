@@ -1,0 +1,21 @@
+::selection {
+  color: #000;
+  background: #21ccbb;
+}
+
+.specialty {
+  color: #21ccbb;
+  filter: drop-shadow(1px 3px #ffe5b4);
+  line-height: 2em;
+}
+
+.social {
+  color: #56e4d6;
+  transition: color 0.2s ease;
+  margin: 0.3rem;
+  filter: drop-shadow(3px 3px #000);
+}
+
+.social:hover {
+  color: #fff;
+}

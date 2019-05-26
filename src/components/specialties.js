@@ -1,8 +1,10 @@
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
+import { SectionContainer } from "../components/common"
+
 export default () => (
-  <section id="specialties">
+  <SectionContainer>
     <h2 class="text-center" data-magellan-destination="specialties">
       Specialties
     </h2>
@@ -58,5 +60,5 @@ export default () => (
         </div>
       </div>
     </div>
-  </section>
+  </SectionContainer>
 )
