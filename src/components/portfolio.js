@@ -40,16 +40,29 @@ const Work = ({ id, title, shortTitle, image, isEnd = false, openModal }) => (
   </Box>
 )
 
+const ModalTitle = styled.h2`
+  margin-bottom: 0.2rem;
+`
+
+const ModalSubtitle = styled.p`
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+`
+
+const ModalDescription = styled.p`
+  margin-bottom: 0;
+`
+
 const ModalContent = ({ title, role, date, link, description }) => (
   <React.Fragment>
-    <h2>{title}</h2>
-    <p className="lead">
-      Role: {role} | {date} |
+    <ModalTitle>{title}</ModalTitle>
+    <ModalSubtitle>
+      Role: {role} &middot; {date} &middot;&nbsp;
       <a href={link} target="_blank" rel="noopener noreferrer">
         Visit
       </a>
-    </p>
-    <p>{description}</p>
+    </ModalSubtitle>
+    <ModalDescription>{description}</ModalDescription>
   </React.Fragment>
 )
 
@@ -100,7 +113,12 @@ export default () => {
         </p>
       </Box>
 
-      <Modal open={open} onClose={closeModal} center>
+      <Modal
+        open={open}
+        onClose={closeModal}
+        center
+        styles={{ modal: { textAlign: "center" } }}
+      >
         <ModalContent {...content} />
       </Modal>
     </PortfolioContainer>

@@ -54,12 +54,12 @@
 .cs-style figure > div {
   overflow: hidden;
 }
-.cs-style figure img {
+.cs-style figure .gatsby-image-wrapper {
   transition: transform 0.4s;
 }
 
-.cs-style figure:hover img,
-.cs-style figure.cs-hover img {
+.cs-style figure:hover .gatsby-image-wrapper,
+.cs-style figure.cs-hover .gatsby-image-wrapper {
   transform: translateX(25%);
 }
 
