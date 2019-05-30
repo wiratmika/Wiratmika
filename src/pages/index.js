@@ -9,7 +9,6 @@ import {
   faRssSquare,
 } from "@fortawesome/free-solid-svg-icons"
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import About from "../components/about"
@@ -23,14 +22,12 @@ library.add(fab, faCode, faDesktop, faEnvelopeSquare, faMobileAlt, faRssSquare)
 
 const IndexPage = () => (
   <React.Fragment>
-    <SEO title="Home" />
+    <SEO />
     <Hero />
-    <Layout>
-      <About />
-      <Portfolio />
-      <Specialties />
-      <Contact />
-    </Layout>
+    <About />
+    <Portfolio />
+    <Specialties />
+    <Contact />
   </React.Fragment>
 )
 

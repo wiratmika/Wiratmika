@@ -7,6 +7,10 @@ import { Box } from "@rebass/grid"
 
 import { SectionContainer } from "../components/common"
 
+const Title = styled.h3`
+  color: white;
+`
+
 const Social = ({ link, icon, isBrand }) => (
   <a href={link} target="_blank" rel="noopener noreferrer">
     <FontAwesomeIcon
@@ -29,7 +33,7 @@ const Contact = ({ className }) => (
         >
           <SectionContainer>
             <Box px={4}>
-              <h3>Drop me a message!</h3>
+              <Title>Drop me a message!</Title>
               <p>
                 I am moonlighting in interesting projects, specializing in
                 responsive, custom-made event and company profile websites.

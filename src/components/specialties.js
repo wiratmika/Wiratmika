@@ -7,7 +7,7 @@ import { SectionContainer, SectionHeader } from "../components/common"
 const Specialty = ({ icon, title, children }) => (
   <Box width={[1, 1 / 3]} px={2}>
     <Box className="text-center">
-      <FontAwesomeIcon icon={icon} size="5x" className="specialty" />
+      <FontAwesomeIcon icon={icon} size="4x" className="specialty" />
     </Box>
     <Box>
       <h3 className="text-center">{title}</h3>

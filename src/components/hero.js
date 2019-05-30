@@ -6,7 +6,8 @@ import styled from "styled-components"
 const Title = styled.h1`
   color: white;
   text-align: center;
-  margin-top: 30vh;
+  margin-top: 25vh;
+  margin-bottom: 8px;
 `
 
 const Subtitle = styled.p`

@@ -1,9 +1,4 @@
 module.exports = {
-  siteMetadata: {
-    title: `Wiratmika`,
-    description: `Social impact-driven, full-stack technologist obsessed with making disproportionate impact at scale.`,
-    author: `@wiratmika`,
-  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
