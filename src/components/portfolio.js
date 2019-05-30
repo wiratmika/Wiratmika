@@ -4,12 +4,19 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import { Flex, Box } from "@rebass/grid"
 
-import { SectionContainer, SectionHeader } from "../components/common"
+import { Button, SectionContainer, SectionHeader } from "../components/common"
 import "./portfolio.css"
 
 const PortfolioContainer = styled(SectionContainer)`
   background: #f5f5f5;
 `
+
+const scrollToBottom = () =>
+  window.scroll({
+    top: document.body.scrollHeight,
+    left: 0,
+    behavior: "smooth",
+  })
 
 const Work = ({ id, title, shortTitle, image, isEnd = false }) => (
   <Box
@@ -23,13 +30,9 @@ const Work = ({ id, title, shortTitle, image, isEnd = false }) => (
         <Img fluid={image} alt={title} />
         <figcaption>
           <h3>{shortTitle}</h3>
-          <a
-            href={isEnd ? "#contact" : "#"}
-            className="button"
-            data-reveal-id={id}
-          >
+          <Button onClick={isEnd ? scrollToBottom : () => null}>
             {isEnd ? "Collaborate" : "View"}
-          </a>
+          </Button>
         </figcaption>
       </div>
     </figure>

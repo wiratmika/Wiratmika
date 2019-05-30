@@ -26,3 +26,11 @@ export const SectionHeader = props => (
     <Divider />
   </Flex>
 )
+
+export const Button = styled.a`
+  cursor: pointer;
+  border-color: #21ccbb;
+  color: #21ccbb;
+  transition: background-color 300ms ease-out;
+  outline: #21ccbb solid 2px;
+`

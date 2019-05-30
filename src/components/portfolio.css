@@ -58,7 +58,7 @@
   transition: transform 0.4s;
 }
 
-.no-touch .cs-style figure:hover img,
+.cs-style figure:hover img,
 .cs-style figure.cs-hover img {
   transform: translateX(25%);
 }
@@ -73,7 +73,7 @@
   transition: transform 0.4s, opacity 0.1s 0.3s;
 }
 
-.no-touch .cs-style figure:hover figcaption,
+.cs-style figure:hover figcaption,
 .cs-style figure.cs-hover figcaption {
   opacity: 1;
   transform: rotateY(0deg);
